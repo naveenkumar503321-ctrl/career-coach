@@ -27,6 +27,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
+import { Pencil } from "lucide-react";
+import Link from "next/link";
 
 const DashboardView = ({ insights }) => {
   // Transform salary data for the chart
@@ -77,6 +80,12 @@ const DashboardView = ({ insights }) => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <Badge variant="outline">Last updated: {lastUpdatedDate}</Badge>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/dashboard/edit">
+            <Pencil className="h-4 w-4 mr-2" />
+            Edit Insights
+          </Link>
+        </Button>
       </div>
 
       {/* Market Overview Cards */}
